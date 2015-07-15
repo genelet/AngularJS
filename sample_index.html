@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="fragment" content="!" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MYPROJECT</title>
+    <!-- USE bootstrap as the CSS template -->
+    <script src="/bootstrap/js/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/angular.min.js"></script>
+    <script src="init.js"></script>
+    <script src="genelet.js"></script>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+		body { padding-top: 50px; }
+		.starter-template { padding: 40px 15px; text-align: center; }
+		.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+    </style>
+  </head>
+
+  <body ng-app="MYPROJECT_APP" ng-controller="MYPROJECT_CONTROLLER">
+
+	<ng-include src="partial_header"></ng-include>
+
+	<div class="container">
+	<ng-include src="partial"></ng-include>
+    </div>
+
+	<ng-include src="partial_footer"></ng-include>
+
+  </body>
+</html>
