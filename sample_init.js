@@ -14,7 +14,7 @@ var GOTO = {
 	"delete"  : "delete",
 	insert    : "insert",
 	update    : "update",
-	lists     : "LISTS",
+	lists     : "Lists",
 	challenge : "challenge",
 	failed    : "failed",
 	logged    : "logged",
