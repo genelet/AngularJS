@@ -43,7 +43,7 @@ app.controller(GOTO.controller, function($scope, $http, $window, $location) {
         $scope[$scope.note] = data;
         return true;
       } else if (angular.isString(landing)) {
-        if (l_data) $scope.single = angular.copy(l_data[0]);
+        //if (l_data) $scope.single = angular.copy(l_data[0]);
         $scope[landing] = data;
         return true;
       } else if (angular.isObject(landing)) {
@@ -141,25 +141,16 @@ app.controller(GOTO.controller, function($scope, $http, $window, $location) {
   };
   $scope.go = function(r,c,a,q,landing) {
     return wrapper(r,c,a,q,"GET",landing);
-  }
+  };
+  $scope.optional_go = function(r,c,a,q,name) {
+    if (angular.isObject($scope[name])) return;
+    return wrapper(r,c,a,q,"GET",name);
+  };
   $scope.send = function(r,c,a,q,landing) {
     return wrapper(r,c,a,q,"POST",landing);
-  }
+  };
   $scope.login = function(r,a,q,landing) {
     q.provider = a
     return ajax_page(r,GOTO.login,q,"POST",landing);
-  }
-
-  $scope.api_go = function(r,c,a,q,name,optional) {
-    if (optional && angular.isObject($scope[name])) return;
-    if (angular.isUndefined(q)) q = {};
-    q.action=a;
-    $scope.note = name;
-    return ajax_page(r, c, q, 'GET', false);
-  }
-
-  $scope.going = function(name,f,s){
-    $scope.single = angular.extend({},f,s);
   };
-
 });
